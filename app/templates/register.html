@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+		<script type="text/javascript" src="/static/js/jquery.js"></script>
+		<script type="text/javascript" src="/static/js/bootstrap.js"></script>
+        <script type="text/javascript" src="/static/js/register.js"></script>
+		<link rel="stylesheet" href="/static/css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="/static/css/bootstrap-theme.css" />
+
+		<link rel="stylesheet" type="text/css" href="/static/css/swiper.css" />
+		<script type="text/javascript" src="/static/js/swiper.js"></script>
+		<link rel="stylesheet" type="text/css" href="/static/css/reset.css" />
+		<style type="text/css">
+			.form-info {
+				border: 1px solid orange;
+				margin: 100px auto;
+				width: 30%;
+				padding: 50px;
+			}
+			
+			.form-info h2{
+				font-size: 2rem;
+				margin-bottom: 20px;
+			}
+			.form-info .submit{
+				text-align: center;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div class="container-fluid">
+			<div class="form-info">
+				
+				<h2>用户注册</h2>
+				
+				<form action="{{ url_for('blue.register') }}" method="post">
+					<div class="form-group">
+						<label for="exampleInputEmail1">用户名</label>
+						<input type="text" class="form-control" id="exampleInputEmail1" placeholder="请输入6-16位用户名" name="username">
+{#						<p class="help-block">请输入6-16位用户名</p>#}
+                        <span id="name-err1" style="color: red;display: none">用户名不能为空</span>
+                        <span id="name-err2" style="color: red;display: none">用户名格式不对,请重新输入</span>
+                        <span id="name-err3" style="color: red;display: none">该用户名已被注册，请重新输入</span>
+					</div>
+					<div class="form-group">
+						<label for="exampleInputPassword1">密码</label>
+						<input type="password" class="form-control" id="password" placeholder="请输入6位以上数字组合密码" name="password">
+{#						<p class="help-block">请输入6位以上拼音字母组合密码</p>#}
+                        <span id="password-err" style="color: red;display: none">输入密码格式不对,请重新输入</span>
+					</div>
+					<div class="form-group">
+						<label for="exampleInputPassword1">确认密码</label>
+						<input type="password" class="form-control" id="password1" placeholder="请再次输入密码" name="password1">
+{#						<p class="help-block">请再次输入6位以上拼音字母组合密码</p>#}
+                        <span id="password1-err" style="color: red;display: none">两次密码输入不一致,请重新输入</span>
+					</div>
+					<div class="form-group">
+						<label for="exampleInputPassword1">邮箱</label>
+						<input type="text" class="form-control" id="mail" placeholder="请再次输入密码" name="mail">
+
+                        <span id="mail-err" style="color: red;display: none">邮箱格式不对,请重新输入</span>
+
+{#						<p class="help-block">请输入邮箱</p>#}
+					</div>
+					<div class="form-group">
+						<label for="exampleInputFile">头像</label>
+						<input type="file" id="exampleInputFile">
+						
+					</div>
+					<div class="submit"><button id="btn1" type="submit" class="btn btn-primary">注册</button></div>
+					
+				</form>
+			</div>
+		</div>
+
+	</body>
+
+</html>
